@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:primeiro_projeto_flutter/model/pessoa.dart';
+import 'package:primeiro_projeto_flutter/widget/pessoa_listtile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,6 +8,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   const MyApp({super.key});
 
   @override
@@ -20,50 +23,18 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Meu primeiro app flutter"),
         ),
-        body: MyStateLessWidget(),
+        body: PessoaListtile(
+          pessoa: Pessoa(
+              id: 1,
+              nome: "Gabriel",
+              altura: 180,
+              peso: 86.66
+            ),
+          ),
       ),
     );
   }
 }
 
-class MyStateLessWidget extends StatefulWidget {
-  const MyStateLessWidget({super.key});
 
-  @override
-  State<MyStateLessWidget> createState() => _MyStateLessWidgetState();
-}
-
-
-class _MyStateLessWidgetState extends  State<MyStateLessWidget> {
-
-  @override
-  Widget build(BuildContext context) {
-    int count = 0;
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Count: $count",
-              style: TextStyle(
-                color: Colors.blue,
-                fontSize: 24,
-              )
-            ),
-          ],
-        ),
-        SizedBox(height: 16),
-        ElevatedButton(
-            onPressed: () {
-              count++;
-            },
-            child: Text("Clique aqui")
-        )
-      ],
-    );
-  }
-}
 
