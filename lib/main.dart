@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:primeiro_projeto_flutter/model/pessoa.dart';
+import 'package:primeiro_projeto_flutter/widget/lista_pessoas.dart';
 import 'package:primeiro_projeto_flutter/widget/pessoa_listtile.dart';
 
 void main() {
   runApp(const MyApp());
-  //runApp(const MyStateLessWidget());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,16 +21,9 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Meu primeiro app flutter"),
+          title: Text("Tela de Vendas teste"),
         ),
-        body: PessoaListtile(
-          pessoa: Pessoa(
-              id: 1,
-              nome: "Gabriel",
-              altura: 180,
-              peso: 86.66
-            ),
-          ),
+        body: ListaPessoas(),
       ),
     );
   }
